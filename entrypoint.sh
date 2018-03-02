@@ -6,23 +6,38 @@ do
 key="$1"
 
 case $key in
-    -e|--extension)
-    EXTENSION="$2"
+    -m|--mainnet)
+    MAINNET="$2"
     shift # past argument
     shift # past value
     ;;
-    -s|--searchpath)
-    SEARCHPATH="$2"
+    -p|--privnet)
+    PRIVNET="$2"
     shift # past argument
     shift # past value
     ;;
-    -l|--lib)
-    LIBPATH="$2"
+    --coznet)
+    COZNET="$2"
     shift # past argument
     shift # past value
     ;;
-    --default)
-    DEFAULT=YES
+    -c|--config)
+    CONFIG="$2"
+    shift # past argument
+    shift # past value
+    ;;
+    -t|--set-default-theme)
+    THEME="$2"
+    shift # past argument
+    shift # past value
+    ;;
+    --version)
+    VERSION="$2"
+    shift # past argument
+    shift # past value
+    ;;
+    --bootstrap)
+    BOOTSTRAP="$2"
     shift # past argument
     ;;
     *)    # unknown option
