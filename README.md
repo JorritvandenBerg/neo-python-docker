@@ -10,21 +10,28 @@ To bootstrap the main chain
 docker run -it -v /host/path/to/where/you/want/to/store/the/chain:/neo-python/Chains jorritvandenberg/neo-python -m --bootstrap
 
 Supported options:
--m / --mainnet (use NEO main net)
--p / --privnet (use private net)
---coznet (use City of Zion net)
--c=/path/to/config/file / --config=/path/to/config/file (config file should be mounted in the Docker container on this path)
--t=<theme> / --set-default-theme=<theme> (neo-python prompt theme, can be dark or light)
---version=neo-python-version (set the neo-python version to be used)
---bootstrap (bootstrap the blockchain, can be used with main or testnet)
--n / --notifications (bootstrap notifcation database, only to be used in combination with --bootstrap)
+-m / --mainnet
+use NEO main net
+-p / --privnet
+use private net
+--coznet
+use City of Zion net
+-c=/path/to/config/file / --config=/path/to/config/file
+Config file should be mounted in the Docker container on this path
+-t=<theme> / --set-default-theme=<theme>
+neo-python prompt theme, can be dark or light)
+--version=neo-python-version
+set the neo-python version to be used
+--bootstrap
+bootstrap the blockchain, can be used with main or testnet
+-n / --notifications
+bootstrap notifcation database, only to be used in combination with --bootstrap
 
 To add an existing wallet from your host to the container:
 docker run -it -v /host/path/to/where/you/want/to/store/the/chain:/neo-python/Chains -v /host/path/to/wallet:/neo-python/wallet jorritvandenberg/neo-python
 
-After closing the containers, the chain will be available in on the path that you defined. 
+After closing the containers, the chain will be available in on the path that you defined.
 
 Important:
 - Make sure that you close your wallet in neo-python ("wallet close") before shutting down the container. Otherwise the wallet can get's stuck in a vulnerable state.
 - The volume persists the blockchain. If you want to start with a clean slate, remove the files in the host path you defined.
-
