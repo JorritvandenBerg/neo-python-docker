@@ -11,21 +11,21 @@ docker run -it -v /host/path/to/where/you/want/to/store/the/chain:/neo-python/Ch
 
 Supported options:
 -m / --mainnet
-use NEO main net
+use NEO main net  
 -p / --privnet
-use private net
+use private net  
 --coznet
-use City of Zion net
+use City of Zion net  
 -c=/path/to/config/file / --config=/path/to/config/file
-Config file should be mounted in the Docker container on this path
+Config file should be mounted in the Docker container on this path  
 -t=<theme> / --set-default-theme=<theme>
-neo-python prompt theme, can be dark or light)
+neo-python prompt theme, can be dark or light  
 --version=neo-python-version
-set the neo-python version to be used
+set the neo-python version to be used  
 --bootstrap
-bootstrap the blockchain, can be used with main or testnet
+bootstrap the blockchain, can be used with main or testnet  
 -n / --notifications
-bootstrap notifcation database, only to be used in combination with --bootstrap
+bootstrap notifcation database, only to be used in combination with --bootstrap  
 
 To add an existing wallet from your host to the container:
 docker run -it -v /host/path/to/where/you/want/to/store/the/chain:/neo-python/Chains -v /host/path/to/wallet:/neo-python/wallet jorritvandenberg/neo-python
