@@ -1,13 +1,13 @@
 # neo-python
 Docker image for neo-python that supports neo-python command line arguments and adds --bootstrap option, to bootstrap the test- or main NEO chain prior to running prompt.py. Bootstrapping persistent requires a mounted volume.
 
-Docker image at: https://hub.docker.com/r/jorritvandenberg/neo-python/
+Docker image at: https://hub.docker.com/r/jorritvandenberg/neo-python-docker/
 
 To run the container on the testchain with a mounted volume:
-docker run -it -v /host/path/to/where/you/want/to/store/the/chain:/neo-python/Chains jorritvandenberg/neo-python
+docker run -it -v /host/path/to/where/you/want/to/store/the/chain:/neo-python/Chains jorritvandenberg/neo-python-docker
 
 To bootstrap the main chain
-docker run -it -v /host/path/to/where/you/want/to/store/the/chain:/neo-python/Chains jorritvandenberg/neo-python -m --bootstrap
+docker run -it -v /host/path/to/where/you/want/to/store/the/chain:/neo-python/Chains jorritvandenberg/neo-python-docker -m --bootstrap
 
 Supported options:
 -m / --mainnet
@@ -30,7 +30,7 @@ Supported options:
 Note that bootstrapping does not work with --privnet or --coznet and -c doesn't work with --mainnet.  
 
 To add an existing wallet from your host to the container:
-docker run -it -v /host/path/to/where/you/want/to/store/the/chain:/neo-python/Chains -v /host/path/to/wallet:/neo-python/wallet jorritvandenberg/neo-python
+docker run -it -v /host/path/to/where/you/want/to/store/the/chain:/neo-python/Chains -v /host/path/to/wallet:/neo-python/wallet jorritvandenberg/neo-python-docker
 
 After closing the containers, the chain will be available in on the path that you defined.
 
