@@ -12,7 +12,7 @@ docker run -it -v /host/path/to/where/you/want/to/store/the/chain:/neo-python/Ch
 Supported options:
 -m / --mainnet (use NEO main net)
 -p / --privnet (use private net)
---coznet (us City of Zion net)
+--coznet (use City of Zion net)
 -c=/path/to/config/file / --config=/path/to/config/file (config file should be mounted in the Docker container on this path)
 -t=<theme> / --set-default-theme=<theme> (neo-python prompt theme, can be dark or light)
 --version=neo-python-version (set the neo-python version to be used)
